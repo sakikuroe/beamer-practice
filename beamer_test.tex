@@ -1,0 +1,173 @@
+\documentclass[aspectratio=169, dvipdfmx, 11pt]{beamer}
+\usepackage{tcolorbox}
+\everymath{\displaystyle}
+
+% Specify a design
+\usetheme{Luebeck}
+% Specify a color
+\setbeamercolor{normal text}{bg=yellow!10!white}
+\usecolortheme[RGB={100, 60, 100}]{structure}
+% Specify a fontstyle
+\usefonttheme{professionalfonts}
+% Hide the navigation bar
+\setbeamertemplate{navigation symbols}{}
+% Display slide number
+\setbeamertemplate{footline}[frame number]
+% Specify a framestyle
+\useoutertheme[subsection = false]{miniframes}
+% Specify a fontstyle
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+\definecolor{red}{rgb}{0.5, 0.0, 0.0}
+\definecolor{green}{rgb}{0.0, 0.5, 0.0}
+\definecolor{blue}{rgb}{0.0, 0.0, 0.5}
+
+\title[]{TITLE}
+\subtitle[]{sub title}
+\author[]{KUROE, Saki}
+\institute[]{Hogehoge University}
+\date{\today}
+
+\begin{document}
+\begin{frame}{}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{完全加法族}
+\begin{frame}{}
+    \begin{tcolorbox}[
+            colframe = red,
+            colback = red!5!white,
+            colbacktitle = red,
+            coltitle = white,
+            fonttitle = \bfseries,
+            rightrule = 0pt,
+            leftrule = 0pt,
+            bottomrule = 0pt,
+            arc = 0pt,
+            title = Def 1.1. 完全加法族
+        ]
+        {
+            \begin{tcolorbox}
+                \begin{itemize}
+                    \item $S$: 集合
+                    \item $\mathcal{F} \in 2^{S}$
+                \end{itemize}
+            \end{tcolorbox}
+            $\mathcal{F}$が完全加法族 \\
+            $\overset{\text{def}}{\Longleftrightarrow}$
+            \begin{enumerate}
+                \item $\varnothing \in \mathcal{F}$
+                \item $A \in \mathcal{F} \Rightarrow A^{c} \in \mathcal{F}$
+                \item $\{A_{i}\}_{i = 1}^{\infty} \subset \mathcal{F} \Rightarrow \bigcup_{i = 1}^{\infty} A_{i} \in \mathcal{F}$
+            \end{enumerate}
+        }
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{}
+    \begin{tcolorbox}[
+            colframe = red,
+            colback = red!5!white,
+            colbacktitle = red,
+            coltitle = white,
+            fonttitle = \bfseries,
+            rightrule = 0pt,
+            leftrule = 0pt,
+            bottomrule = 0pt,
+            arc = 0pt,
+            title = Def 1.2. 可測空間
+        ]
+        {
+            $\mathcal{(S, F)}$が可測空間\\
+            $\overset{\text{def}}{\Longleftrightarrow}$
+            \begin{itemize}
+                \item $S$: 集合
+                \item $\mathcal{F} \in 2^{S}$: 完全加法族
+            \end{itemize}
+        }
+    \end{tcolorbox}
+    \begin{tcolorbox}[
+            colframe = red,
+            colback = red!5!white,
+            colbacktitle = red,
+            coltitle = white,
+            fonttitle = \bfseries,
+            rightrule = 0pt,
+            leftrule = 0pt,
+            bottomrule = 0pt,
+            arc = 0pt,
+            title = Def 1.3. 可測
+        ]
+        {
+            \begin{tcolorbox}
+                $\mathcal{(S, F)}$: 可測空間
+            \end{tcolorbox}
+            $A$が可測
+            $\overset{\text{def}}{\Longleftrightarrow}$
+            $A \in \mathcal{F}$
+        }
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{}
+    \begin{tcolorbox}[
+            colframe = blue,
+            colback = blue!5!white,
+            colbacktitle = blue,
+            coltitle = white,
+            fonttitle = \bfseries,
+            rightrule = 0pt,
+            leftrule = 0pt,
+            bottomrule = 0pt,
+            arc = 0pt,
+            title = Prop 1.4.
+        ]
+        {
+            \begin{tcolorbox}
+                $\mathcal{(S, F)}$: 可測空間
+            \end{tcolorbox}
+            $\{A_{i}\}_{i = 1}^{\infty} \subset \mathcal{F}
+                \Rightarrow
+                \bigcap_{i = 1}^{\infty} A_{i} \in \mathcal{F}$
+        }
+    \end{tcolorbox}
+\end{frame}
+
+\section{測度}
+\begin{frame}
+    \begin{tcolorbox}[
+            colframe = red,
+            colback = red!5!white,
+            colbacktitle = red,
+            coltitle = white,
+            fonttitle = \bfseries,
+            rightrule = 0pt,
+            leftrule = 0pt,
+            bottomrule = 0pt,
+            arc = 0pt,
+            title = Def 1.5. 測度
+        ]
+        {
+            \begin{tcolorbox}
+                \begin{itemize}
+                    \item $\mathcal{(S, F)}$: 可測空間\\
+                    \item $\mu: \mathcal{F} \rightarrow [0, \infty]$
+                \end{itemize}
+            \end{tcolorbox}
+            $\mu$が測度\\
+            $\overset{\text{def}}{\Longleftrightarrow}$
+            \begin{itemize}
+                \item $\mu(\varnothing) = 0 \,\,\,(\varnothing \in \mathcal{F})$
+                \item 可算加法性:\\
+                      $\{A_{i}\}_{i = 1}^{\infty}$ (disjoint) $\subset \mathcal{F},
+                          \mu\left(\bigcup_{i = 1}^{\infty} A_{i}\right) = \sum_{i = 1}^{\infty}\mu(A_{i})$
+            \end{itemize}
+        }
+    \end{tcolorbox}
+\end{frame}
+\end{document}
